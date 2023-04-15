@@ -56,7 +56,7 @@ model Listing {
   category      String
   roomCount     Int
   bathroomCount Int
-  questCount    Int
+  guestCount    Int
   locationValue String
   userId        String
   price         Int
