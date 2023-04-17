@@ -1,5 +1,4 @@
 import prisma from "@/app/libs/prismadb";
-import ListingCard from "../components/listings/ListingCard";
 
 interface IParams {
   listingId?: string;
