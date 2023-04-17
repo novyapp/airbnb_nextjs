@@ -13,12 +13,14 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import useRentModal from "@/app/hooks/useRentModal";
 
 import { SafeUser } from "@/app/types";
+import { useRouter } from "next/navigation";
 
 interface UsernameProps {
   currentUser?: SafeUser | null;
 }
 
 const Usermenu: React.FC<UsernameProps> = ({ currentUser }) => {
+  const router = useRouter();
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
@@ -61,7 +63,10 @@ const Usermenu: React.FC<UsernameProps> = ({ currentUser }) => {
           <div className="flex cursor-pointer flex-col">
             {currentUser ? (
               <>
-                <MenuItem label="My Trips" onClick={() => {}} />
+                <MenuItem
+                  label="My Trips"
+                  onClick={() => router.push("/trips")}
+                />
                 <MenuItem label="My Favorites" onClick={() => {}} />
                 <MenuItem label="My reservations" onClick={() => {}} />
                 <MenuItem label="My properties" onClick={() => {}} />
